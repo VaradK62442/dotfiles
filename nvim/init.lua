@@ -1,0 +1,1 @@
+vim.o.rnu = true
