@@ -26,6 +26,7 @@ alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
 alias gd='git diff'
+alias gr='git restore'
 
 # general functions
 git() {
@@ -53,7 +54,9 @@ program () {
 	if [ -d "$DIR_PROGRAMMING/$1" ]; then
 		cd $DIR_PROGRAMMING/$1;
 		$EDITOR .;
-		activate;
+		if [ -d "$DIR_PROGRAMMING/$1/.venv" ]; then
+			activate;
+		fi
 	else
 		mkdir $DIR_PROGRAMMING/$1;
 		cd $DIR_PROGRAMMING/$1;
