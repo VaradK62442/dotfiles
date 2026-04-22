@@ -8,18 +8,6 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
-    "tool_permissions": {
-      "tools": {
-        "fetch": {
-          "always_allow": [
-            {
-              "pattern": "^https?://docs\\.rs"
-            }
-          ]
-        }
-      }
-    },
-    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-5-mini",
@@ -39,7 +27,7 @@
     "trust_all_worktrees": true,
   },
   "vim_mode": true,
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
   "base_keymap": "VSCode",
   "ui_font_size": 16,
   "buffer_font_size": 15,

@@ -41,6 +41,7 @@ git() {
       command git subtree pull --prefix=$REL_EXP_DIR experiments_repo main
       command git pull "${@:2}"
     else
+      cd "$cwd"
       command git "$@"
     fi
     cd "$cwd"
