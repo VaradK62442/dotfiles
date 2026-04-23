@@ -95,7 +95,7 @@
   "clock": {
     "interval": 1,
     "timezone": "Europe/London",
-    "format": "  {:%H:%M %a %Y-%m-%d} ",
+    "format": "  {:%H:%M:%S %a %Y-%m-%d} ",
     "tooltip-format": "{calendar}",
     "calendar": {
       "mode"          : "year",
