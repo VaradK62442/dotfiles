@@ -8,10 +8,8 @@
   "modules-left": [
     "clock",
     "hyprland/workspaces"
-    // "custom/lock"
   ],
   "modules-center": [
-    // "hyprland/window",
     "custom/media"
   ],
   "modules-right": [
@@ -28,7 +26,19 @@
     "disable-scroll": false,
     "all-outputs": false,
     "format": "{icon}",
-    "on-click": "activate"
+    "on-click": "activate",
+    "format-icons": {
+      "1": "१",
+      "2": "२",
+      "3": "३",
+      "4": "४",
+      "5": "५",
+      "6": "६",
+      "7": "७",
+      "8": "८",
+      "9": "९",
+      "10": "१०"
+    }
   },
   "network": {
     "format-wifi": " 󰤨 {essid}({signalStrength}%) ",
@@ -86,7 +96,24 @@
     "interval": 1,
     "timezone": "Europe/London",
     "format": "  {:%H:%M %a %Y-%m-%d} ",
-    "tooltip": false
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 4,
+      "weeks-pos"     : "left",
+      "on-scroll"     : 0,
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
   "tray": {
     "icon-size": 20,
