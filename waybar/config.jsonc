@@ -80,7 +80,7 @@
   "custom/media": {
     "format": "󰎈 {}",
     "interval": 2,
-    "exec": "playerctl metadata --format '{{title}}' 2>/dev/null || echo 'No media playing'",
+    "exec": "playerctl metadata --format '{{title}} - {{artist}}' 2>/dev/null || echo 'No media playing'",
     // "exec-if": "playerctl status 2>/dev/null | grep -q Playing",
     "max-length": 30,
     "min-length": 30
