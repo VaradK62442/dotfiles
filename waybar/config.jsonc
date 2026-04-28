@@ -14,13 +14,13 @@
   ],
   "modules-right": [
     "tray",
-    "network",
     "battery",
     "pulseaudio",
     "backlight",
     "memory",
     "cpu",
-    "custom/temperature"
+    "custom/temperature",
+    "network"
   ],
   "hyprland/workspaces": {
     "disable-scroll": false,
@@ -41,12 +41,14 @@
     }
   },
   "network": {
-    "format-wifi": " 󰤨 {essid} ({signalStrength}%) ",
-    "format-ethernet": " Wired ",
-    "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
+    "format-wifi": " 󰤨 {essid} ({signalStrength}%) <span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes} ",
+    "format-ethernet": "  Wired ({signalStrength}%) <span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes} ",
     "format-linked": " 󱘖 {ifname} (No IP) ",
     "format-disconnected": "  Disconnected ",
-    "interval": 2
+    "interval": 2,
+    "max-length": 50,
+    "min-length": 50,
+    "tooltip": false
   },
   "battery": {
     "states": {
