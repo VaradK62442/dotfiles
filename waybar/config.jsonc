@@ -17,16 +17,16 @@
     ],
 
     "custom/media": {
-      "format": "󰎈 {}",
+      "format": " 󰎈 {} ",
       "interval": 2,
-      "exec": "playerctl metadata --format '{{title}} - {{artist}}' 2>/dev/null || echo 'No media playing'",
+      "exec": "(playerctl metadata --format '{{title}} - {{artist}}' 2>/dev/null || echo 'No media playing') | sed 's/&/\\&amp;/g' | sed 's/</\\&lt;/g' | sed 's/>/\\&gt;/g'",
       "min-length": 30,
       "max-length": 70
     },
     "clock": {
       "interval": 1,
       "timezone": "Europe/London",
-      "format": "  {:%H:%M:%S %a %Y-%m-%d} ",
+      "format": "  {:%H:%M:%S %a %Y-%m-%d} ",
       "tooltip-format": "{calendar}",
       "calendar": {
         "mode": "year",
@@ -40,17 +40,13 @@
           "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
           "today":    "<span color='#ff6699'><b><u>{}</u></b></span>"
         }
-      },
-      "actions": {
-        "on-scroll-up": "shift_up",
-        "on-scroll-down": "shift_down"
       }
     },
     "network": {
-      "format-wifi": " 󰤨 {essid} ({signalStrength}%) <span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes} ",
-      "format-ethernet": "  Wired ({signalStrength}%) <span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes} ",
+      "format-wifi": " 󰤨 {essid} ({signalStrength}%)   {bandwidthUpBytes}   {bandwidthDownBytes} ",
+      "format-ethernet": "  Wired ({signalStrength}%)   {bandwidthUpBytes}   {bandwidthDownBytes} ",
       "format-linked": " 󱘖 {ifname} (No IP) ",
-      "format-disconnected": "  Disconnected ",
+      "format-disconnected": "  Disconnected ",
       "interval": 2,
       "min-length": 50,
       "max-length": 100
@@ -109,21 +105,25 @@
       "format": "{icon}{volume}% ",
       "format-muted": " 󰖁 0% ",
       "format-icons": {
-        "default": ["  ", "  ", "  "]
+	"default": [
+          "  ",
+          "  ",
+          "  "
+	]
       },
       "on-click-right": "pavucontrol -t 3",
       "on-click": "pactl -- set-sink-mute 0 toggle"
     },
     "custom/temperature": {
       "exec": "sensors | awk '/^Package id 0:/ {print int($4)}'",
-      "format": " {}°C ",
+      "format": " {}°C ",
       "interval": 2
     },
     "memory": {
-      "format": "  {used:0.1f}G/{total:0.1f}G "
+      "format": "  {used:0.1f}G/{total:0.1f}G "
     },
     "cpu": {
-      "format": "  {usage}% ",
+      "format": "  {usage}% ",
       "tooltip": true
     },
     "tray": {
