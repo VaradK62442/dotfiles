@@ -69,7 +69,8 @@
       "backlight",
       "memory",
       "cpu",
-      "custom/temperature"
+      "custom/temperature",
+      "disk"
     ],
 
     "hyprland/workspaces": {
@@ -134,6 +135,11 @@
       "device": "intel_backlight",
       "format": "{icon}{percent}% ",
       "format-icons": [" 󰃞 ", " 󰃝 ", " 󰃟 ", " 󰃠 "]
+    },
+    "disk": {
+      "interval": 30,
+      "format": "  {free}/{total} ({percentage_used}%) ",
+      "path": "/"
     }
   }
 ]

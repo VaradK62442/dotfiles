@@ -40,6 +40,7 @@
 #memory,
 #cpu,
 #network,
+#disk,
 #custom-lock{
   border-radius: 4px;
   margin: 3px 3px;
@@ -89,6 +90,9 @@
 }
 #window{
   background-color: #74c7ec;
+}
+#disk{
+  background-color: #b4befe;
 }
 
 #waybar.hidden {
